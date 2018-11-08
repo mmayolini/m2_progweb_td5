@@ -1,0 +1,9 @@
+Pour la base de données : voir mLab pour le faire en ligne
+
+Amazon -> Sandbox -> Continue
+
+Add database user (sinon impossible d'interagir avec la base)
+
+Add collection (ex: application)
+
+Ligne de commande : "new MongoClientURI(<adresseMongo>);" puis "new MongoClient(<URI>);"
