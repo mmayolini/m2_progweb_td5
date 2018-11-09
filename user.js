@@ -7,6 +7,7 @@ const listUsers = "http://localhost:8080/HelloWorld/users";
 const addUser = "http://localhost:8080/HelloWorld/user/add";
 const deleteUser = "http://localhost:8080/HelloWorld/user/delete";
 const modifyUser = "http://localhost:8080/HelloWorld/user/modify";
+const infoUser = "user-info.html";
 
 modifyUserForm.addEventListener('submit', handleSubmitModify);
 addUserForm.addEventListener('submit', handleSubmitAdd);
@@ -83,6 +84,15 @@ function loadContactList() {
         let li = document.createElement("li");
         li.innerHTML = value.firstname + " " + value.lastname + "\t";
 
+        let input_info = document.createElement("input");
+        input_info.class = "info";
+        input_info.type = "button";
+        input_info.value = "Info";
+        input_info.addEventListener('click', function () {
+          handleInfo(value.id, value.firstname, value.lastname);
+        });
+        li.append(input_info);
+
         let input_modify = document.createElement("input");
         input_modify.class = "modify";
         input_modify.type = "button";
@@ -120,6 +130,10 @@ function loadContactList() {
       contactList.append(li);
     });
   });*/
+}
+
+async function handleInfo(id, firstname, lastname){
+  window.location = infoUser+"?id="+id;
 }
 
 async function handleSuppr(id, firstname, lastname) {
